@@ -20,6 +20,8 @@
 		41B542752907E0540092B0E7 /* ReservationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B542742907E0540092B0E7 /* ReservationForm.swift */; };
 		41B5427D2907F4850092B0E7 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B5427C2907F4850092B0E7 /* ReservationView.swift */; };
 		F529FA332952680F002B09D0 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F529FA322952680F002B09D0 /* HomePage.swift */; };
+		F5D4BABE2973B5DF00836772 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D4BABD2973B5DF00836772 /* PopupView.swift */; };
+		F5EF13BA2973C20600DF63EB /* SheetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF13B92973C20600DF63EB /* SheetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		41B542742907E0540092B0E7 /* ReservationForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationForm.swift; sourceTree = "<group>"; };
 		41B5427C2907F4850092B0E7 /* ReservationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		F529FA322952680F002B09D0 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		F5D4BABD2973B5DF00836772 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		F5EF13B92973C20600DF63EB /* SheetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				F529FA322952680F002B09D0 /* HomePage.swift */,
+				F5EF13B92973C20600DF63EB /* SheetManager.swift */,
+				F5D4BABD2973B5DF00836772 /* PopupView.swift */,
 				41B542682907D0510092B0E7 /* MainView.swift */,
 				41AECB662906D62E007983FF /* StartingProjectApp.swift */,
 				41AECB682906D62E007983FF /* LocationsView.swift */,
@@ -145,7 +151,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 41AECB5E2906D62E007983FF /* Build configuration list for PBXProject "StartingProject" */;
+			buildConfigurationList = 41AECB5E2906D62E007983FF /* Build configuration list for PBXProject "ReservationApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -184,11 +190,13 @@
 				F529FA332952680F002B09D0 /* HomePage.swift in Sources */,
 				41AECB7D2906DE4B007983FF /* LitttleLemonLogo.swift in Sources */,
 				41A124EA2919468900088C01 /* RestaurantLocation.swift in Sources */,
+				F5EF13BA2973C20600DF63EB /* SheetManager.swift in Sources */,
 				41B5427D2907F4850092B0E7 /* ReservationView.swift in Sources */,
 				41A124E92919468400088C01 /* RestaurantView.swift in Sources */,
 				41A124EB2919468F00088C01 /* Model.swift in Sources */,
 				41AECB692906D62E007983FF /* LocationsView.swift in Sources */,
 				41AECB672906D62E007983FF /* StartingProjectApp.swift in Sources */,
+				F5D4BABE2973B5DF00836772 /* PopupView.swift in Sources */,
 				41B542752907E0540092B0E7 /* ReservationForm.swift in Sources */,
 				41AECB772906D6A7007983FF /* Reservation.swift in Sources */,
 			);
@@ -326,8 +334,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,8 +367,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +388,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		41AECB5E2906D62E007983FF /* Build configuration list for PBXProject "StartingProject" */ = {
+		41AECB5E2906D62E007983FF /* Build configuration list for PBXProject "ReservationApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41AECB6F2906D638007983FF /* Debug */,
