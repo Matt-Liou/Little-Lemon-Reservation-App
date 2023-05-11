@@ -1,3 +1,3 @@
 # Little-Lemon-Reservation-App
 
-Nothing to show for now
+Showcasing on https://www.mattliou.com/littlelemon
