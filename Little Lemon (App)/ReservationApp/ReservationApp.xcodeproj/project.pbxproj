@@ -74,6 +74,7 @@
 		41265845290A8335001023C9 /* RESTAURANT */ = {
 			isa = PBXGroup;
 			children = (
+				41AECB782906D6C2007983FF /* Model.swift */,
 				41AECB742906D68B007983FF /* RestaurantLocation.swift */,
 				41B542722907D2360092B0E7 /* RestaurantView.swift */,
 			);
@@ -99,22 +100,15 @@
 		41AECB652906D62E007983FF /* StartingProject */ = {
 			isa = PBXGroup;
 			children = (
-				F5BE9A932981C9A00020FBD6 /* Info.plist */,
-				F529FA322952680F002B09D0 /* HomePage.swift */,
-				F5BE9A942981CC810020FBD6 /* LaunchScreenView.swift */,
-				F5BE9A962981D2370020FBD6 /* LaunchScreenManager.swift */,
-				F53E9CB6297A4CFD007A8C91 /* PopupDisplay.swift */,
-				F5EF13B92973C20600DF63EB /* SheetManager.swift */,
-				F5D4BABD2973B5DF00836772 /* PopupView.swift */,
-				41B542682907D0510092B0E7 /* MainView.swift */,
-				41AECB682906D62E007983FF /* LocationsView.swift */,
-				41AECB782906D6C2007983FF /* Model.swift */,
-				41AECB7C2906DE4B007983FF /* LitttleLemonLogo.swift */,
-				41AECB662906D62E007983FF /* StartingProjectApp.swift */,
+				F5158F462B2C2252007A869F /* Views */,
+				F5158F482B2C229F007A869F /* Managers */,
+				F5158F492B2C22FF007A869F /* Components */,
 				41265845290A8335001023C9 /* RESTAURANT */,
 				41265844290A8311001023C9 /* RESERVATION */,
-				41AECB6A2906D638007983FF /* Assets.xcassets */,
 				41AECB6C2906D638007983FF /* Preview Content */,
+				41AECB662906D62E007983FF /* StartingProjectApp.swift */,
+				F5BE9A932981C9A00020FBD6 /* Info.plist */,
+				41AECB6A2906D638007983FF /* Assets.xcassets */,
 			);
 			path = StartingProject;
 			sourceTree = "<group>";
@@ -125,6 +119,36 @@
 				41AECB6D2906D638007983FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5158F462B2C2252007A869F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F529FA322952680F002B09D0 /* HomePage.swift */,
+				F5BE9A942981CC810020FBD6 /* LaunchScreenView.swift */,
+				F5D4BABD2973B5DF00836772 /* PopupView.swift */,
+				41B542682907D0510092B0E7 /* MainView.swift */,
+				41AECB682906D62E007983FF /* LocationsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F5158F482B2C229F007A869F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F5BE9A962981D2370020FBD6 /* LaunchScreenManager.swift */,
+				F53E9CB6297A4CFD007A8C91 /* PopupDisplay.swift */,
+				F5EF13B92973C20600DF63EB /* SheetManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F5158F492B2C22FF007A869F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				41AECB7C2906DE4B007983FF /* LitttleLemonLogo.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
