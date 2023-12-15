@@ -2,6 +2,9 @@ import Foundation
 
 class Model:ObservableObject {
   let restaurants = [
+    RestaurantLocation(city: "Gheeto City",
+                       neighborhood: "Matty's Crib",
+                       phoneNumber: "(347) 255-4434"),
     RestaurantLocation(city: "Las Vegas",
                        neighborhood: "Downtown",
                        phoneNumber: "(702) 555-9898"),

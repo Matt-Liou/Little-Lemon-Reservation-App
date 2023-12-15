@@ -18,9 +18,9 @@ struct PopupView: View {
     var descritpion: String = "The lemon bar, also called lemon square, is a popular type of dessert bar in the United States consisting of a thin, shortbread crust and a lemon curd filling."
     
     var body: some View {
-        PopContent(title: displayPopUp.displayTitle, picture: displayPopUp.picture, descritpion: descritpion)
+        PopContent(title: displayPopUp.displayTitle, picture: displayPopUp.picture, descritpion: displayPopUp.descDict[displayPopUp.picture] ?? "Error")
         .frame(height: 390)
-        .frame(width: 330)
+        .frame(width: 325)
         .padding(.horizontal, 24)
         .padding(.vertical, 40)
         .padding(.top, -10)
@@ -57,17 +57,19 @@ struct PopContent: View{
                     .frame(width: 40)
                 Text(title)
                     .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .foregroundColor(.black.opacity(0.6))
 //                    .padding()
-            }
+            }.padding(.top, -13)
             Image(picture)
                 .resizable()
-                .frame(height: 200)
-                .frame(width: 320)
+                .scaledToFit()
+                .frame(height: 180)
+                //.frame(width: 280)
                 .padding(.top, 5)
                 .padding(.bottom, 13)
             Text(descritpion)
-                .font(.callout)
-                .foregroundColor(.black.opacity(0.8))
+                .font(.system(size: 17))
+                .foregroundColor(.black.opacity(0.6))
         }
     }
 }

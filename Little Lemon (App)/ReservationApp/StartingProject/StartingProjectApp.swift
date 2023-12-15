@@ -5,12 +5,19 @@ struct StartingProjectApp: App {
     
     @StateObject var sheetManager = SheetManager()
     @StateObject var popupdisplay = PopupDisplay()
+    @StateObject var launchScreenManager = LaunchScreenManager()
     
     var body: some Scene {
         WindowGroup {
-            HomePage()
-                .environmentObject(sheetManager)
-                .environmentObject(popupdisplay)
+            ZStack{
+                HomePage()
+                    .environmentObject(sheetManager)
+                    .environmentObject(popupdisplay)
+                if launchScreenManager.state != .completed{
+                    LaunchScreenView()
+                }
+            }
+            .environmentObject(launchScreenManager)
         }
     }
 }

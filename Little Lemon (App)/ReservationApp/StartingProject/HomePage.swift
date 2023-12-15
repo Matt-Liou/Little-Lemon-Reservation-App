@@ -11,6 +11,7 @@ struct HomePage: View {
     
     @EnvironmentObject var sheetManager: SheetManager
     @EnvironmentObject var displayPopUp: PopupDisplay
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
     
     
     var body: some View {
@@ -21,27 +22,38 @@ struct HomePage: View {
     
     }
     
+    @State private var hasAppeared = false
+    
     var heading: some View{
         VStack{
             ZStack(alignment: .top){
                 Color(red: 73 / 255, green: 94 / 255, blue: 87 / 255)
+                    .edgesIgnoringSafeArea([.all])
                 HStack(alignment: .top) {
                     VStack(alignment: .leading){
-                        Text("Little Lemon".uppercased())
-                            .font(.system(.largeTitle, design: .serif))
-                            .fontWeight(.medium)
+                        HStack(alignment: .center) {
+                            Image("LittleLemonLogo")
+                                .resizable()
+                                .frame(height: 35)
+                                .frame(width: 35)
+                            Text("Little Lemon".uppercased())
+                                .font(.system(size: 38, design: .serif))
+                                .fontWeight(.medium)
                             .foregroundColor(Color(red: 244 / 255, green: 206 / 255, blue: 20 / 255))
+                            Spacer()
+                        }.padding(.top, -10)
                         Text("By Yih Der Liou")
-                            .foregroundColor(.white)
                             .fontWeight(.semibold)
-                            .font(.title2)
+                            .font(.caption)
+                            .foregroundColor(.white.opacity(0.6))
+                            .padding(.top, -30)
                         Spacer()
                         Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
                             .font(.system(.title3 ,design: .default))
-                            .foregroundColor(.white)
+                            .foregroundColor(.white.opacity(0.9))
                             .fontWeight(.medium)
                             .frame(width:230, alignment: .leading)
-                        
+                            .padding(.top, -10)
                         Spacer()
                         //.padding()
                         Button(action: {
@@ -57,14 +69,26 @@ struct HomePage: View {
                         .padding(10)
                         .background(Color(red: 244 / 255, green: 206 / 255, blue: 20 / 255))
                         .foregroundColor(.black)
-                        .cornerRadius(20)
-                        
+                        .cornerRadius(30)
+                        .shadow(radius: 2)
+                        .onAppear{
+                            if !self.hasAppeared{
+                                DispatchQueue
+                                    .main
+                                    .asyncAfter(deadline: .now() + 2){
+                                        launchScreenManager.dismiss()
+                                    }
+                                self.hasAppeared = true
+                            }
+                        }
+                        //Spacer()
                         
                     }.padding(-5)
                     Spacer()
                 }
                 .padding(23)
-            }.frame(height: 300)
+            }.frame(height: 290).shadow(radius: 10)
+        
                 //Start from here
             ScrollView{
                 Text("Today's Menu".uppercased())
@@ -80,69 +104,67 @@ struct HomePage: View {
                 FoodTitle(name: "APPETIZERS")
                 //Scrolling View
                 ScrollView(.horizontal, showsIndicators: false){
-                    HStack(alignment: .center){
+                    HStack(alignment: .top){
                         //Lists of food...
                         displayFood(picture: "onionRing", name: "Onion Ring")
-                            .environmentObject(self.displayPopUp)
-                        //MARK: Issue
                         Spacer()
-                        displayFood(picture: "chickenWings", name: "Chic-Wings")
+                        displayFood(picture: "PigsBlanket", name: "Pigs Blanket")
                         Spacer()
-                        displayFood(picture: "lobsterRolls", name: "Lob-Rolls")
+                        displayFood(picture: "lobsterRolls", name: "Lobster Rolls")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "DevilEgg", name: "Deviled Egg")
                         Spacer()
-                        displayFood()
-                    }.padding([.leading, .trailing], 45).padding([.top, .bottom], 10)
-                }
+                        displayFood(picture: "CrabCakes", name: "Crab Cakes")
+                    }.padding([.leading, .trailing], 45).padding(.top, 3)
+                }.padding(.bottom, -2)
                 FoodTitle(name: "ENTRÉES")
                 //Scrolling View
                 ScrollView(.horizontal, showsIndicators: false){
-                    HStack(alignment: .center){
+                    HStack(alignment: .top){
                         //Lists of food...
-                        displayFood()
+                        displayFood(picture: "OrangeChic", name: "Orange-Chic")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "ChicPie", name: "Chicken Pie")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "BatFishwFries", name: "Battered Fish")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "Nigiri", name: "Nigiri")
                         Spacer()
-                        displayFood()
-                    }.padding([.leading, .trailing], 45).padding([.top, .bottom], 10)
-                }
+                        displayFood(picture: "BrieCheeBurger", name: "Chee-Burger")
+                    }.padding([.leading, .trailing], 45).padding(.top, 3)
+                }.padding(.bottom, -2)
                 FoodTitle(name: "DESSERTS")
                 //Scrolling View
                 ScrollView(.horizontal, showsIndicators: false){
-                    HStack(alignment: .center){
+                    HStack(alignment: .top){
                         //Lists of food...
-                        displayFood()
+                        displayFood(picture: "Tiramisu", name: "Tiramisu")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "BerryChantCake", name: "Berry Cake")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "StrawShortCake", name: "Straw-Cake")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "LemonBars", name: "Lemon Bars")
                         Spacer()
-                        displayFood()
-                    }.padding([.leading, .trailing], 45).padding([.top, .bottom], 10)
-                }
+                        displayFood(picture: "Flan", name: "Flan")
+                    }.padding([.leading, .trailing], 45).padding(.top, 3)
+                }.padding(.bottom, -2)
                 FoodTitle(name: "DRINKS")
                 //Scrolling View
                 ScrollView(.horizontal, showsIndicators: false){
-                    HStack(alignment: .center){
+                    HStack(alignment: .top){
                         //Lists of food...
-                        displayFood()
+                        displayFood(picture: "Manhattan", name: "Manhattan")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "mojito 1", name: "Mojito")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "Martini", name: "Martini")
                         Spacer()
-                        displayFood()
+                        displayFood(picture: "Negroni", name: "Negroni")
                         Spacer()
-                        displayFood()
-                    }.padding([.leading, .trailing], 45).padding([.top, .bottom], 10)
-                }
+                        displayFood(picture: "Margarita", name: "Margarita")
+                    }.padding([.leading, .trailing], 45).padding(.top, 3)
+                }.padding(.bottom, -2)
 //                Pervious layout
 //                VStack{
 //                    //First Row
@@ -170,15 +192,14 @@ struct HomePage: View {
 //                        displayFood(picture: "BobaTea", name: "Boba Tea")
 //                    }.padding([.leading, .trailing], 45).padding([.top, .bottom], 10)
 //                }
-            }.padding(-8)//.environmentObject(PopupDisplay())
-                
+            }.padding(-8)
         }.overlay(alignment: .bottom){
             if sheetManager.action.isPresented{
                 PopupView{
                     withAnimation(){
                         sheetManager.dismiss()
                     }
-                }.environmentObject(self.displayPopUp) //MARK: issue
+                }
             }
         }
     }
@@ -190,6 +211,8 @@ struct displayFood: View{
     
     var picture: String = "LemonBar"
     var name: String = "Lemon Bar"
+    var customX: Double = 85
+    var customY: Double = 85
     var body: some View{
         VStack{
             Button(action: {
@@ -201,8 +224,9 @@ struct displayFood: View{
             }){
                 Image(picture)
                     .resizable()
-                    .frame(height: 85)
-                    .frame(width: 85)
+                    .scaledToFit()
+                    .frame(height: customY)
+                    .frame(width: customX)
                     //.aspectRatio(contentMode: .fill)
                     .background(Color.white)
                     .cornerRadius(50)
@@ -211,8 +235,10 @@ struct displayFood: View{
                 
             }
             Text(name)
-                .font(.system(.headline, design: .default))
+                .font(.system(.subheadline, design: .default))
+                .bold()
                 .foregroundColor(.black.opacity(0.8))
+                .frame(width: 98)
         }.padding([.trailing],10)
     }
 }
@@ -226,16 +252,10 @@ struct FoodTitle: View {
                 .bold()
                 .underline()
                 .foregroundColor(Color(red: 73 / 255, green: 94 / 255, blue: 87 / 255))
+                .shadow(radius: 15)
             Spacer()
         }.padding([.leading, .trailing], 40).padding([.top], 10).padding([.bottom], -3)
     }
-}
-
-class PopupDisplay: ObservableObject{
-    @Published var displayTitle: String = "Default Title"
-    @Published var picture: String = "LemonBar"
-    @Published var descritpion: String = "The lemon bar, also called lemon square, is a popular type of dessert bar in the United States consisting of a thin, shortbread crust and a lemon curd filling."
-    //Use dictionary for description...
 }
 
 struct HomePage_Previews: PreviewProvider {
@@ -243,5 +263,6 @@ struct HomePage_Previews: PreviewProvider {
         HomePage()
           .environmentObject(PopupDisplay())
           .environmentObject(SheetManager())
+          .environmentObject(LaunchScreenManager())
     }
 }
